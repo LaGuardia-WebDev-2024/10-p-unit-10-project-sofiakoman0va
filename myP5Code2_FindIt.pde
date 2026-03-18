@@ -1,13 +1,13 @@
-var starXPos = [];
-var starYPos = [];
-var star = "⭐️";
-var starTotal = 100;
+var burgerXPos = [];
+var burgerYPos = [];
+var burger = "🍔";
+var burgerTotal = 100;
 
-var planetXPos = [];
-var planetYPos = [];
-var planet = "🪐";
-var planetTotal = 3;
-var planetFound = 0;
+var alienXPos = [];
+var alienYPos = [];
+var alien = "👽";
+var alienTotal = 3;
+var alienFound = 0;
 
 setup = function() {
    size(600, 450); 
@@ -32,35 +32,35 @@ mouseClicked = function(){
 }
 
 var check = function(xClick, yClick){
-  for(var i = 0; i < planetXPos.length; i++){
-    if(dist(xClick - 5, yClick - 5, planetXPos[i], planetYPos[i])<15){
-      planetXPos.splice(i, 1);
-      planetYPos.splice(i, 1);
-      planetFound++;
+  for(var i = 0; i < burgerXPos.length; i++){
+    if(dist(xClick - 5, yClick - 5, burgerXPos[i], burgerYPos[i])<15){
+      burgerXPos.splice(i, 1);
+      burgerYPos.splice(i, 1);
+      burgerFound++;
     }
   }
 }
 
 var display = function(){
-  background(100,100,100);
+  background(255, 46, 126);
 
   fill(200,200,0);
   textSize(20);
 
-  for(var i = 0; i < planetXPos.length; i ++){
-    text(planet, planetXPos[i], planetYPos[i]);
+  for(var i = 0; i < alienXPos.length; i ++){
+    text(alien, alienXPos[i], alienYPos[i]);
   }
 
-  for(var i = 0; i < starXPos.length; i ++){
-    text(star, starXPos[i], starYPos[i]);
+  for(var i = 0; i < burgerXPos.length; i ++){
+    text(burger, burgerXPos[i], burgerYPos[i]);
   }
 
   fill(0,0,0);
   rect(0,400,600,50);
   fill(255,255,255);
-  text("Find The " + planet + "s   |   " + planet + " " + planetFound + "/" + planetTotal, 0, 425);
+  text("Find The " + alien + "s   |   " + alien + " " + alienFound + "/" + alienTotal, 0, 425);
 
-  if(planetFound == planetTotal){
+  if(alienFound == alienTotal){
     fill(0, 200, 200);
     textSize(50);
     text("Press 'r' to restart \nthe game", 50, 200);
@@ -68,20 +68,20 @@ var display = function(){
 }
 
 var reset = function(){
-  starXPos = [];
-  starYPos = [];
-  planetXPos = [];
-  planetYPos = [];
-  planetFound = 0;
+  burgerXPos = [];
+  burgerYPos = [];
+  alienXPos = [];
+  alienYPos = [];
+  alienFound = 0;
 
 
-  for(var i = 0; i < starTotal; i++){
-    starXPos.push(random(0,600));
-    starYPos.push(random(0,400));
+  for(var i = 0; i < burgerTotal; i++){
+    burgerXPos.push(random(0,600));
+    burgerYPos.push(random(0,400));
   }
 
-  for(var i = 0; i < planetTotal; i++){
-    planetXPos.push(random(0,600));
-    planetYPos.push(random(0,400));
+  for(var i = 0; i < alienTotal; i++){
+    alienXPos.push(random(0,600));
+    alienYPos.push(random(0,400));
   }
 }
