@@ -9,6 +9,7 @@ var alien = "👽";
 var alienTotal = 3;
 var alienFound = 0;
 
+
 setup = function() {
    size(600, 450); 
 
@@ -24,7 +25,9 @@ draw = function(){
    }
 
   display();
+
 }
+
 
 
 mouseClicked = function(){
@@ -84,4 +87,5 @@ var reset = function(){
     alienXPos.push(random(0,600));
     alienYPos.push(random(0,400));
   }
+
 }
