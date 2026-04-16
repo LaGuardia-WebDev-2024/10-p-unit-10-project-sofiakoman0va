@@ -25,13 +25,6 @@ textSize(30);
   x += 50;
   }
 
-//for loop
-var drawFace = function() {
-    for (var i = 0; i < yPositions.length; i++) {
-        text("😍", xPositions[i], yPositions[i]);
-    }
-}
-
  //array
  stroke(0, 255, 224);
  var myThings = ["lattes", "pizza", "baby pandas", "milkshake"];
@@ -44,4 +37,11 @@ text(myThings[3], 20, 250);
 
 noStroke();
 drawFace();
+}
+
+//for loop
+var drawFace = function() {
+    for (var i = 0; i < yPositions.length; i++) {
+        text("😍", xPositions[i], yPositions[i]);
+    }
 }
